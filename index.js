@@ -1,7 +1,9 @@
-const bola = " 6f15b351fadbb3de3d13a247c9ed8a6e2678b11a";
+const bola = " 1205ba8f4a0030ee1b5385eb726e39531c41990f";
 const username = "Atanda1";
+let profileDetails = "";
 let repoList = "";
 axios.defaults.headers.common["Authorization"] = "bearer " + bola;
+let profile = [];
 let repos = [];
 
 axios
@@ -149,4 +151,41 @@ axios
   .catch((err) => {
     console.log(err);
   });
+
+  
+axios.post("https://api.github.com/graphql", {
+	query : `
+		query {
+			user(login: "Atanda1") {
+			avatarUrl
+			bio
+			name
+			login
+			}
+		}	  
+	`
+}).then((res) => {
+	console.log(res.data)
+	profile = res.data;
+	console.log(profile);
+		profileDetails += `
+			<div class="gh-main__profile__user">
+			<figure class="gh-main__profile__user__img">
+			<img
+				src="${profile.data.user.avatarUrl}"
+				alt="profile picture"
+			/>
+			</figure>
+			<div class="gh-main__profile__user__name">
+			<h1>${profile.data.user.name}</h1>
+			<span class="username">${profile.data.user.login}</span>
+			</div>
+			</div>
+			<div class="gh-main__profile__about">
+			${profile.data.user.bio}
+			</div>
+			`;
+		document.getElementById("gh-main__profile__data").innerHTML = profileDetails;
+
+}).catch(err => console.log(err));
 
