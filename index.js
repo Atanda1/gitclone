@@ -1,4 +1,4 @@
-const token = "d8b01b15f74393ef7751";
+const token = "fde2795bdba9b7f7a6db92a8fb14c55f7dcf592c";
 const username = "Atanda1";
 let profileDetails = "";
 let repoList = "";
