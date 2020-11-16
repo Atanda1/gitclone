@@ -1,4 +1,4 @@
-const token = " 1ac7222fd84abb4e244645f529fb96860dfc0642";
+const token = "d8b01b15f74393ef7751";
 const username = "Atanda1";
 let profileDetails = "";
 let repoList = "";
@@ -7,7 +7,7 @@ let profile = [];
 let repos = [];
 
 axios
-  .post("https://api.github.com/graphql", {
+  .post("https://api.github.com/users", {
     query: `
 	 	query {			
 			repositoryOwner(login: "Atanda1") {
