@@ -150,4 +150,3 @@ axios
     console.log(err);
   });
 
-axios.post("https://api.github.com/graphql", {});
