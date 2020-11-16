@@ -1,8 +1,8 @@
-const bola = " 1205ba8f4a0030ee1b5385eb726e39531c41990f";
+const token = " d64a47d8ef1c8b82e3e6ebbe550a31d1b413b050";
 const username = "Atanda1";
 let profileDetails = "";
 let repoList = "";
-axios.defaults.headers.common["Authorization"] = "bearer " + bola;
+axios.defaults.headers.common["Authorization"] = "bearer " + token;
 let profile = [];
 let repos = [];
 
@@ -89,6 +89,7 @@ axios
 		  >
 		</div>
 		<div class="gh-main__repos__repo__details__extra">
+		  <figure style="background-color: ${item.node.languages.edges[0].node.color};" class="br1"></figure>
 		  <span class="detail">${item.node.languages.edges[0].node.name}</span
 		  ><span class="detail"
 			><i
@@ -145,16 +146,17 @@ axios
 		</div>
 	  </li>
 		`;
-        document.getElementById("repos__list").innerHTML = repoList;
+
+		document.getElementById("repos__list").innerHTML = repoList;
       });
   })
   .catch((err) => {
     console.log(err);
   });
 
-  
-axios.post("https://api.github.com/graphql", {
-	query : `
+axios
+  .post("https://api.github.com/graphql", {
+    query: `
 		query {
 			user(login: "Atanda1") {
 			avatarUrl
@@ -163,12 +165,15 @@ axios.post("https://api.github.com/graphql", {
 			login
 			}
 		}	  
-	`
-}).then((res) => {
-	console.log(res.data)
-	profile = res.data;
-	console.log(profile);
-		profileDetails += `
+	`,
+  })
+  .then((res) => {
+    console.log(res.data);
+    profile = res.data;
+    document.getElementById("gh__header__user__imgId").src =
+      profile.data.user.avatarUrl;
+    console.log(profile);
+    profileDetails += `
 			<div class="gh-main__profile__user">
 			<figure class="gh-main__profile__user__img">
 			<img
@@ -177,15 +182,16 @@ axios.post("https://api.github.com/graphql", {
 			/>
 			</figure>
 			<div class="gh-main__profile__user__name">
-			<h1>${profile.data.user.name}</h1>
-			<span class="username">${profile.data.user.login}</span>
+				<h1>${profile.data.user.name}</h1>
+				<span class="username">${profile.data.user.login}</span>
 			</div>
 			</div>
 			<div class="gh-main__profile__about">
 			${profile.data.user.bio}
 			</div>
 			`;
-		document.getElementById("gh-main__profile__data").innerHTML = profileDetails;
-
-}).catch(err => console.log(err));
-
+    document.getElementById(
+      "gh-main__profile__data"
+    ).innerHTML = profileDetails;
+  })
+  .catch((err) => console.log(err));

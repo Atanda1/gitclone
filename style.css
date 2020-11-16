@@ -71,6 +71,12 @@ a {
   margin-left: 0.8rem;
 }
 
+.br1 {
+  border-radius: 50%;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 0.5rem;
+}
 .black {
   color: #24292e;
 }

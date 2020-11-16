@@ -84,7 +84,6 @@
                       alt=""
                     />
                   </figure>
-                  <b>faarda</b>
                 </button>
               </li>
               <li class="gh__header__nav__item show-sm">
@@ -191,8 +190,9 @@
             ><button class="gh__header__user hide-sm">
               <figure class="gh__header__user__img">
                 <img
-                  src="https://avatars3.githubusercontent.com/u/30731541?v=4"
-                  alt=""
+                  id="gh__header__user__imgId"
+                  src=""
+                  alt="profile picture"
                 />
               </figure>
               <i
@@ -286,7 +286,7 @@
                         d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
                       ></path></svg
                   ></i>
-                  Repositories <span class="pill">20</span></a
+                  Repositories <span class="pill">62</span></a
                 >
               </li>
               <li class="gh-tabs__tab">
@@ -360,9 +360,7 @@
           </div>
         </section>
         <main class="gh-main">
-          <div class="gh-main__profile" id="gh-main__profile__data">
-           
-          </div>
+          <div class="gh-main__profile" id="gh-main__profile__data"></div>
           <div class="gh-main__repos">
             <form
               action=""
@@ -448,17 +446,17 @@
                 ></i>
                 New</a
               >
-			</form>
-			<p class="gh-main__repos__info"><b>20</b> results for <b>public</b> repositories</p>
-		
-            <ul class="gh-main__repos__list" id="repos__list">
-              
-            </ul>
+            </form>
+            <p class="gh-main__repos__info">
+              <b>20</b> results for <b>public</b> repositories
+            </p>
+
+            <ul class="gh-main__repos__list" id="repos__list"></ul>
           </div>
         </main>
       </div>
-	</div>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="./index.js"></script>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
