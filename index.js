@@ -1,4 +1,4 @@
-const token = " d64a47d8ef1c8b82e3e6ebbe550a31d1b413b050";
+const token = "135e9edb0dca6bee519ca680673d421bbf11e34a";
 const username = "Atanda1";
 let profileDetails = "";
 let repoList = "";
@@ -17,7 +17,7 @@ axios
 							id
 							name
 							nameWithOwner
-							languages(last: 1) {
+							languages(first: 1) {
 							edges {
 								node {
 								name
