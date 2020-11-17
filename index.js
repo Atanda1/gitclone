@@ -1,4 +1,4 @@
-const token = "8fb17ca3713f51e64d852686de1da6587885c19c";
+const token = "336eb3d8e916f7a0db1c687fe24ca405214991c5 ";
 const username = "Atanda1";
 
 let profileDetails = "";
