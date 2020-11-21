@@ -1,4 +1,4 @@
-const token = "336eb3d8e916f7a0db1c687fe24ca405214991c5 ";
+const token = "5df1d19f171a1683110ab12af1c23091d92cd7bb";
 const username = "Atanda1";
 
 let profileDetails = "";
@@ -50,7 +50,6 @@ axios
         
         let description = item.node.description != null ? item.node.description : "";
 		const time = new Date(item.node.updatedAt).toDateString().slice(0, 11).slice(3, 11);
-		
 		repoList += 
 		`
 			<li class="gh-main__repos__repo">
@@ -91,9 +90,8 @@ axios
 			>
 			</div>
 			<div class="gh-main__repos__repo__details__extra">
-			<figure style="background-color: ${item.node.languages.edges[0].node.color};" class="br1"></figure>
-			<span class="detail">${item.node.languages.edges[0].node.name}</span
-			><span class="detail"
+			
+			<span class="detail"
 				><i
 				data-v-07452373=""
 				data-name="star"
