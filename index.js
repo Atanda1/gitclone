@@ -1,4 +1,5 @@
-const token = "5df1d19f171a1683110ab12af1c23091d92cd7bb";
+//removed token because git keeps reverting th token,once it sees there's a commit with the token exposed
+const token = "TOKEN";
 const username = "Atanda1";
 
 let profileDetails = "";
@@ -90,7 +91,8 @@ axios
 			>
 			</div>
 			<div class="gh-main__repos__repo__details__extra">
-			
+			<figure style="background-color: ${item.node.languages.edges[0].node.color};" class="br1"></figure>
+		  	<span class="detail">${item.node.languages.edges[0].node.name}</span
 			<span class="detail"
 				><i
 				data-v-07452373=""
