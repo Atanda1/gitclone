@@ -1,5 +1,8 @@
-//removed token because git keeps reverting th token,once it sees there's a commit with the token exposed
-const token = "TOKEN";
+"use strict";
+require('dotenv').config();
+
+
+const token = process.env.GIT__TOKEN;
 const username = "Atanda1";
 
 let profileDetails = "";

@@ -1,0 +1,23 @@
+{
+  "name": "gitclone",
+  "version": "1.0.0",
+  "description": "It's a clone of the github repository page pulling it's data from the Github API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atanda1/gitclone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atanda1/gitclone/issues"
+  },
+  "homepage": "https://github.com/Atanda1/gitclone#readme",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "dotenv": "^9.0.2"
+  }
+}
